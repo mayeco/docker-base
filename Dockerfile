@@ -9,4 +9,5 @@ RUN apt-get update \
         ca-certificates \
         git-core \
         ssh \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
