@@ -2,6 +2,7 @@
 
 export LC_ALL=C
 export DEBIAN_FRONTEND=noninteractive
+export TERM dumb
 
 echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache
 
