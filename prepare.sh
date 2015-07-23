@@ -7,7 +7,7 @@ echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache
 
 ## Temporarily disable dpkg fsync to make building faster.
 if [[ ! -e /etc/dpkg/dpkg.cfg.d/docker-apt-speedup ]]; then
-	echo force-unsafe-io > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup
+    echo force-unsafe-io > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup
 fi
 
 ## Prevent initramfs updates from trying to run grub and lilo.
@@ -27,13 +27,11 @@ ln -sf /bin/true /usr/bin/ischroot
 
 apt-get update \
     && apt-get install -y --no-install-recommends \
-        php5-cli \
-        curl \
         ca-certificates \
-        git-core \
-        ssh \
-        tar \
-        wget \
         apt-transport-https \
+        php5-cli \
+        git-core \
+        curl \
+        ssh \
 
 apt-get clean && rm -rf /prepare.sh rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* /var/tmp/*
