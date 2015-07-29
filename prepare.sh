@@ -34,5 +34,6 @@ apt-get update \
         git-core \
         curl \
         ssh \
+        vim-tiny \
 
 apt-get clean && rm -rf /prepare.sh rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* /var/tmp/*
